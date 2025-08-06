@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Itens - Frutiger Aero</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Fundo animado com bolhas -->
+    <div class="background-animation">
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+        <div class="bubble bubble-4"></div>
+        <div class="bubble bubble-5"></div>
+        <div class="bubble bubble-6"></div>
+    </div>
+
+    <!-- Header com gradiente -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-cube"></i>
+                    <h1>Gerenciador de Itens</h1>
+                </div>
+                <div class="stats-container" id="statsContainer">
+                    <div class="stat-card">
+                        <i class="fas fa-boxes"></i>
+                        <div class="stat-info">
+                            <span class="stat-number" id="totalItens">0</span>
+                            <span class="stat-label">Itens</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-layer-group"></i>
+                        <div class="stat-info">
+                            <span class="stat-number" id="totalQuantidade">0</span>
+                            <span class="stat-label">Quantidade</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-dollar-sign"></i>
+                        <div class="stat-info">
+                            <span class="stat-number" id="valorTotal">R$ 0</span>
+                            <span class="stat-label">Valor Total</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main">
+        <div class="container">
+            <!-- Seção de filtros -->
+            <section class="filters-section">
+                <div class="glass-card">
+                    <h2><i class="fas fa-filter"></i> Filtros</h2>
+                    <div class="filters-grid">
+                        <div class="filter-group">
+                            <label for="filtroNome">
+                                <i class="fas fa-search"></i>
+                                Buscar por nome
+                            </label>
+                            <input type="text" id="filtroNome" placeholder="Digite o nome do item...">
+                        </div>
+                        <div class="filter-group">
+                            <label for="filtroTipo">
+                                <i class="fas fa-tags"></i>
+                                Filtrar por tipo
+                            </label>
+                            <select id="filtroTipo">
+                                <option value="">Todos os tipos</option>
+                                <option value="Eletrônicos">Eletrônicos</option>
+                                <option value="Periféricos">Periféricos</option>
+                                <option value="Acessórios">Acessórios</option>
+                                <option value="Móveis">Móveis</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <button type="button" id="btnLimparFiltros" class="btn-secondary">
+                                <i class="fas fa-times"></i>
+                                Limpar Filtros
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção de cadastro -->
+            <section class="form-section">
+                <div class="glass-card">
+                    <h2 id="formTitle">
+                        <i class="fas fa-plus-circle"></i>
+                        Adicionar Novo Item
+                    </h2>
+                    <form id="itemForm" class="item-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="nome">
+                                    <i class="fas fa-tag"></i>
+                                    Nome do Item *
+                                </label>
+                                <input type="text" id="nome" name="nome" required placeholder="Ex: Notebook Dell">
+                            </div>
+                            <div class="form-group">
+                                <label for="tipo">
+                                    <i class="fas fa-folder"></i>
+                                    Tipo *
+                                </label>
+                                <select id="tipo" name="tipo" required>
+                                    <option value="">Selecione o tipo</option>
+                                    <option value="Eletrônicos">Eletrônicos</option>
+                                    <option value="Periféricos">Periféricos</option>
+                                    <option value="Acessórios">Acessórios</option>
+                                    <option value="Móveis">Móveis</option>
+                                    <option value="Outros">Outros</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="quantidade">
+                                    <i class="fas fa-sort-numeric-up"></i>
+                                    Quantidade *
+                                </label>
+                                <input type="number" id="quantidade" name="quantidade" required min="0" placeholder="0">
+                            </div>
+                            <div class="form-group">
+                                <label for="preco">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    Preço (R$)
+                                </label>
+                                <input type="number" id="preco" name="preco" step="0.01" min="0" placeholder="0.00">
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="descricao">
+                                <i class="fas fa-align-left"></i>
+                                Descrição
+                            </label>
+                            <textarea id="descricao" name="descricao" rows="3" placeholder="Descrição opcional do item..."></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary" id="btnSubmit">
+                                <i class="fas fa-save"></i>
+                                <span>Salvar Item</span>
+                            </button>
+                            <button type="button" class="btn-secondary" id="btnCancelar" style="display: none;">
+                                <i class="fas fa-times"></i>
+                                Cancelar
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Seção da lista -->
+            <section class="list-section">
+                <div class="glass-card">
+                    <div class="section-header">
+                        <h2>
+                            <i class="fas fa-list"></i>
+                            Lista de Itens
+                        </h2>
+                        <div class="view-toggle">
+                            <button class="view-btn active" data-view="grid">
+                                <i class="fas fa-th"></i>
+                            </button>
+                            <button class="view-btn" data-view="table">
+                                <i class="fas fa-table"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Loading spinner -->
+                    <div class="loading" id="loading">
+                        <div class="spinner"></div>
+                        <p>Carregando itens...</p>
+                    </div>
+
+                    <!-- Grid view -->
+                    <div class="items-grid" id="itemsGrid"></div>
+
+                    <!-- Table view -->
+                    <div class="table-container" id="tableContainer" style="display: none;">
+                        <table class="items-table">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Tipo</th>
+                                    <th>Quantidade</th>
+                                    <th>Preço</th>
+                                    <th>Valor Total</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody"></tbody>
+                        </table>
+                    </div>
+
+                    <!-- Empty state -->
+                    <div class="empty-state" id="emptyState" style="display: none;">
+                        <i class="fas fa-inbox"></i>
+                        <h3>Nenhum item encontrado</h3>
+                        <p>Adicione seu primeiro item ou ajuste os filtros de busca.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal de confirmação -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle">Confirmar Ação</h3>
+                <button class="modal-close" id="modalClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p id="modalMessage">Tem certeza que deseja realizar esta ação?</p>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-secondary" id="modalCancel">Cancelar</button>
+                <button class="btn-danger" id="modalConfirm">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast notifications -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
