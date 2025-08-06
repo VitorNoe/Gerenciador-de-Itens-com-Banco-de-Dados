@@ -1,4 +1,4 @@
-# Gerenciador de Itens - Frutiger Aero
+# Gerenciador de Itens
 
 Um sistema completo de gerenciamento de itens com design moderno inspirado no estilo Frutiger Aero, desenvolvido com PHP, MySQL e JavaScript com animações usando Anime.js.
 
