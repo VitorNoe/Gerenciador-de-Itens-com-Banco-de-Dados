@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Projeto Final – Gerenciador de Itens</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Projeto Final – Gerenciador de Itens</h1>
+  </header>
+  <main>
+    <!-- Copilot: gerar aqui o formulário de cadastro e tabela de itens -->
+    <section id="cadastro">
+      <h2>Cadastro de Itens</h2>
+      <form id="itemForm">
+        <input type="text" id="nome" placeholder="Nome do item" required>
+        <input type="text" id="tipo" placeholder="Tipo" required>
+        <input type="number" id="quantidade" placeholder="Quantidade" required min="1">
+        <button type="submit">Adicionar</button>
+      </form>
+    </section>
+    <section id="lista">
+      <h2>Lista de Itens</h2>
+      <table id="tabelaItens">
+        <thead><tr><th>Nome</th><th>Tipo</th><th>Qtd</th><th>Ações</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+  <footer>
+    <small>Projeto Final – CRUD com Banco de Dados</small>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
