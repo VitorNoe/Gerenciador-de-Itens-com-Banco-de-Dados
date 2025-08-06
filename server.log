@@ -1,0 +1,19 @@
+[Wed Aug  6 19:33:07 2025] PHP 8.1.2-1ubuntu2.22 Development Server (http://localhost:8000) started
+[Wed Aug  6 19:33:13 2025] [::1]:47796 Accepted
+[Wed Aug  6 19:33:13 2025] [::1]:47796 [200]: HEAD /
+[Wed Aug  6 19:33:13 2025] [::1]:47796 Closing
+[Wed Aug  6 19:33:17 2025] [::1]:39912 Accepted
+[Wed Aug  6 19:33:17 2025] [::1]:39916 Accepted
+[Wed Aug  6 19:33:17 2025] [::1]:39912 [200]: GET /
+[Wed Aug  6 19:33:17 2025] [::1]:39912 Closing
+[Wed Aug  6 19:33:17 2025] [::1]:39916 [200]: GET /style.css
+[Wed Aug  6 19:33:17 2025] [::1]:39916 Closing
+[Wed Aug  6 19:33:17 2025] [::1]:39926 Accepted
+[Wed Aug  6 19:33:17 2025] [::1]:39926 [200]: GET /script.js
+[Wed Aug  6 19:33:17 2025] [::1]:39926 Closing
+[Wed Aug  6 19:33:17 2025] [::1]:39928 Accepted
+[Wed Aug  6 19:33:17 2025] [::1]:39928 [500]: GET /server.php?endpoint=itens
+[Wed Aug  6 19:33:17 2025] [::1]:39928 Closing
+[Wed Aug  6 19:33:18 2025] [::1]:39936 Accepted
+[Wed Aug  6 19:33:18 2025] [::1]:39936 [404]: GET /favicon.ico - No such file or directory
+[Wed Aug  6 19:33:18 2025] [::1]:39936 Closing
